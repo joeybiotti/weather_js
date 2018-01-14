@@ -1,3 +1,13 @@
 body {
+  margin-top: 12px;
   background: #f4f4f4;
-  color: dodgerblue; }
+  color: #428BCA; }
+
+footer {
+  background: #428BCA;
+  color: #f4f4f4;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1px; }
