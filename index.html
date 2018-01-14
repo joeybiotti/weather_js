@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Weather App</title>
 </head>
+
 <body>
 
-    <h1 class="text-center">JS Weather App</h1>
-    <h2 class="text-center">A JavaScript Weather App</h2>
+    <h1 class="text-center">Weather Search</h1>
 
     <div class="container">
-        <div class="card">
-            <div class="row">
-                <div id="output"></div>
+        <form id="weather-form">
+            <div class="form-group">
+                <input type="text" id="weather-input" class="form-control" placeholder="Enter a City and State...">
             </div>
+            <button type="submit" class="btn btn-primary btn-block">
+                <i class="fa fa-search"></i>
+                Search
+            </button>
+        </form>
+        <br>
+        <div class="card">
+            <div class="rounded mx-auto d-block" id="weather-icon"></div>
+            <div id="location-output"></div>
+            <div id="weather-output"></div>
+            <div id="time-output"></div>
         </div>
+
     </div>
 
+    <footer>
+        <div class="text-center">&copy;2018</div>
+    </footer>
 
     <!--JQUERY-->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
@@ -29,4 +46,5 @@
     <!--MAIN.JS-->
     <script src="js/main.js"></script>
 </body>
+
 </html>

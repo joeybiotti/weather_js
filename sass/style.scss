@@ -1,4 +1,19 @@
+//Colors
+$white: #f4f4f4;
+$blue: #428BCA;
+
 body{
-    background: #f4f4f4;
-    color: dodgerblue;
+    margin-top: 12px;
+    background: $white;
+    color: $blue;
+}
+
+footer{
+    background: $blue;
+    color:  $white;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1px;
 }
