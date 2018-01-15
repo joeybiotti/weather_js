@@ -1,5 +1,7 @@
 console.log("main.js loaded");
 
+//Api Key
+let apiKey = '596e50f0ee44f6b1'; //API KEY GOES HERE.
 
 //Get location form
 let locationForm = document.getElementById('weather-form');
@@ -11,11 +13,11 @@ function forecast(e){
     e.preventDefault();
 
     let location = document.getElementById('weather-input').value;
-    let apiKey = ''; //API KEY GOES HERE.
 
     axios.get('http://api.wunderground.com/api/'+apiKey+'/geolookup/conditions/q/'+location+'.json',{
         params:{
-            location: location
+            location: location,
+            key: apiKey
         }
     })
     .then(function(response){
@@ -26,7 +28,7 @@ function forecast(e){
         let locationInfo = response.data.current_observation.display_location.full;
         console.log(locationInfo);
 
-        let locationOutput =   `<h2 class="text-center text-success"><strong>${locationInfo}</strong></h2>`
+        let locationOutput =   `<h2 class="text-center text-success"><strong>${locationInfo}</strong></h2>`;
 
         //Weather Info
         let weatherInfo = response.data.current_observation.feelslike_string;
@@ -37,13 +39,13 @@ function forecast(e){
         //Weather Img
         let weatherImg = response.data.current_observation.icon_url;
 
-        let weatherImage = `<img src="${weatherImg}" alt="weather image"/>`
+        let weatherImage = `<img src="${weatherImg}" alt="weather image"/>`;
 
         //Local Time
         let localTime = response.data.current_observation.observation_time;
         console.log(localTime);
 
-        let time = `<h6 class="text-center text-success">${localTime}</h6>`
+        let time = `<h6 class="text-center text-success">${localTime}</h6>`;
 
         //Output to DOM
         document.getElementById('location-output').innerHTML = locationOutput;
@@ -55,3 +57,51 @@ function forecast(e){
         console.log(error);
     })
 };
+
+//Get forecast form
+let forecastForm = document.getElementById('forecast-form');
+
+forecastForm.addEventListener('submit', threeDayForecast);
+function threeDayForecast(e){
+    e.preventDefault();
+
+    let forecastLocation = document.getElementById('forecast-input').value;
+    console.log(forecastLocation);
+
+    axios.get('http://api.wunderground.com/api/'+ apiKey +'/forecast/q/TN/Nashville.json', {
+        params: {
+            location: location,
+            key: apiKey
+        }
+    })
+    .then(function(response){
+       console.log('Forecast response: ', response);
+
+       let forecastOutput = `<h6 class="text-center text-success"><strong>Three Day Forecast</strong></h6>`;
+
+       let forecastInfo = response.data.forecast.txt_forecast.forecastday[0].fcttext;
+       let forecastDay = response.data.forecast.txt_forecast.forecastday[0].title;
+       let forecastIcon = response.data.forecast.txt_forecast.forecastday[0].icon_url;
+
+
+        let threeDayForecastOutput =[];
+
+        for(var i = 0; i < forecastInfo.length; i++){
+                threeDayForecastOutput +=
+                    `
+                        <p>${forecastInfo[i]}</p>
+                    `
+       };
+
+
+       document.getElementById('forecast-output').innerHTML = forecastOutput;
+       document.getElementById('three-day-forecast').innerHTML = threeDayForecastOutput;
+
+    })
+    .catch(function(error){
+        console.log('Forecast error: ', error);
+    })
+};
+
+//                           <!--  <h6 class="text-center">${forecastDay}</h6>
+                            // {/*<img src="${forecastIcon}" class="rounded mx-auto d-block" alt="Forecast Icon"/>*/}
