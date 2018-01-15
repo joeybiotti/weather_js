@@ -12,6 +12,7 @@ body{
     margin-top: 12px;
     background: $white;
     color: $blue;
+    background: url('../img/clouds.jpg');
 }
 
 h1{
@@ -21,11 +22,10 @@ h1{
 }
 
 footer{
-    background: $blue;
     color:  $white;
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 1px;
+    padding: 4px;
 }

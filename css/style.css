@@ -2,7 +2,8 @@
 body {
   margin-top: 12px;
   background: #f4f4f4;
-  color: #0080ff; }
+  color: #0080ff;
+  background: url("../img/clouds.jpg"); }
 
 h1 {
   font-family: "Julius Sans One", sans-serif;
@@ -10,10 +11,9 @@ h1 {
   text-shadow: 1px 1px #03a6ff; }
 
 footer {
-  background: #0080ff;
   color: #f4f4f4;
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1px; }
+  padding: 4px; }

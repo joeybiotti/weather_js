@@ -1,7 +1,7 @@
 console.log("main.js loaded");
 
 //Api Key
-let apiKey = ''; //API KEY GOES HERE.
+let apiKey = '596e50f0ee44f6b1'; //API KEY GOES HERE.
 
 //Get location form
 let locationForm = document.getElementById('weather-form');
