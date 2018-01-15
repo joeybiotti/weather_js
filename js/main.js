@@ -1,7 +1,7 @@
 console.log("main.js loaded");
 
 //Api Key
-let apiKey = '596e50f0ee44f6b1'; //API KEY GOES HERE.
+let apiKey = ''; //API KEY GOES HERE.
 
 //Get location form
 let locationForm = document.getElementById('weather-form');
@@ -77,22 +77,19 @@ function threeDayForecast(e){
     .then(function(response){
        console.log('Forecast response: ', response);
 
-       let forecastOutput = `<h6 class="text-center text-success"><strong>Three Day Forecast</strong></h6>`;
+       let forecastOutput = `<h2 class="text-center text-success card-title"><strong>Three Day Forecast</strong></h2>`;
 
        let forecastInfo = response.data.forecast.txt_forecast.forecastday[0].fcttext;
        let forecastDay = response.data.forecast.txt_forecast.forecastday[0].title;
        let forecastIcon = response.data.forecast.txt_forecast.forecastday[0].icon_url;
 
-
-        let threeDayForecastOutput =[];
-
-        for(var i = 0; i < forecastInfo.length; i++){
-                threeDayForecastOutput +=
-                    `
-                        <p>${forecastInfo[i]}</p>
-                    `
-       };
-
+       let threeDayForecastOutput =  `
+                <div>
+                    <h4 class="text-center text-success">${forecastDay}</h4>
+                    <img class="rounded mx-auto d-block" src="${forecastIcon}" alt="Forecast Icon"/>
+                    <h6 class="text-center">${forecastInfo}</h6>
+                </div>
+       `
 
        document.getElementById('forecast-output').innerHTML = forecastOutput;
        document.getElementById('three-day-forecast').innerHTML = threeDayForecastOutput;
@@ -102,6 +99,3 @@ function threeDayForecast(e){
         console.log('Forecast error: ', error);
     })
 };
-
-//                           <!--  <h6 class="text-center">${forecastDay}</h6>
-                            // {/*<img src="${forecastIcon}" class="rounded mx-auto d-block" alt="Forecast Icon"/>*/}
