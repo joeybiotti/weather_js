@@ -1,10 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Julius+Sans+One");
 body {
   margin-top: 12px;
   background: #f4f4f4;
-  color: #428BCA; }
+  color: #0080ff; }
+
+h1 {
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 100px;
+  text-shadow: 1px 1px #03a6ff; }
 
 footer {
-  background: #428BCA;
+  background: #0080ff;
   color: #f4f4f4;
   position: absolute;
   right: 0;
