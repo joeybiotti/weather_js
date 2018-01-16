@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
 
 //Colors
 $white: #f4f4f4;
@@ -7,11 +8,14 @@ $textShadow: #9baec8;
 
 //Fonts
 $headerFont: 'Julius Sans One', sans-serif;
+$bodyFont: 'Open Sans', sans-serif;
 
 body{
     margin-top: 12px;
     background: $white;
     background: url('../img/clouds.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 h1{
@@ -20,6 +24,11 @@ h1{
     text-shadow: 2px 1px 0px $blue;
     margin-bottom: 50px;
     color: $white;
+}
+
+.card{
+    font-family: $bodyFont;
+    color: $blue;
 }
 
 footer{
