@@ -28,13 +28,13 @@ function forecast(e){
         let locationInfo = response.data.current_observation.display_location.full;
         console.log(locationInfo);
 
-        let locationOutput =   `<h2 class="text-center text-success"><strong>${locationInfo}</strong></h2>`;
+        let locationOutput =   `<h2 class="text-center text-primary"><strong>${locationInfo}</strong></h2>`;
 
         //Weather Info
         let weatherInfo = response.data.current_observation.feelslike_string;
         console.log(weatherInfo);
 
-        let weatherReport = `<h3 class="text-center text-success">${weatherInfo}</h3>`
+        let weatherReport = `<h3 class="text-center text-primary">${weatherInfo}</h3>`
 
         //Weather Img
         let weatherImg = response.data.current_observation.icon_url;
@@ -43,9 +43,8 @@ function forecast(e){
 
         //Local Time
         let localTime = response.data.current_observation.observation_time;
-        console.log(localTime);
 
-        let time = `<h6 class="text-center text-success">${localTime}</h6>`;
+        let time = `<h6 class="text-center text-primary">${localTime}</h6>`;
 
         //Output to DOM
         document.getElementById('location-output').innerHTML = locationOutput;
@@ -77,7 +76,7 @@ function threeDayForecast(e){
     .then(function(response){
        console.log('Forecast response: ', response);
 
-       let forecastOutput = `<h2 class="text-center text-success card-title"><strong>Tomorrow's Weather</strong></h2>`;
+       let forecastOutput = `<h2 class="text-center text-primary card-title"><strong>Tomorrow's Weather</strong></h2>`;
 
        let forecastInfo = response.data.forecast.txt_forecast.forecastday[2].fcttext;
        let forecastDay = response.data.forecast.txt_forecast.forecastday[2].title;
@@ -85,7 +84,7 @@ function threeDayForecast(e){
 
        const threeDayForecastOutput = `
             <div>
-                <h4 class="text-center text-success"><u>${forecastDay}</u></h4>
+                <h4 class="text-center text-primary"><u>${forecastDay}</u></h4>
                 <img class="rounded mx-auto d-block" src="${forecastIcon}" alt="Forecast Icon"/>
                 <h6 class="text-center">${forecastInfo}</h6>
             </div>
