@@ -16,36 +16,39 @@
     <h1 class="text-center">Weather Search</h1>
 
     <div class="container">
-        <form id="weather-form">
-            <div class="form-group">
-                <input type="text" id="weather-input" class="form-control" placeholder="Enter a City and State...">
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">
+        <div class="w-75 mx-auto">
+            <form id="weather-form">
+                <div class="form-group">
+                    <input type="text" id="weather-input" class="form-control" placeholder="Enter City and State...">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
                 <i class="fa fa-search"></i>
-                Search
+                Search Today's Weather
             </button>
-        </form>
-        <br>
-        <div class="card">
-            <div class="rounded mx-auto d-block" id="weather-icon"></div>
-            <div id="location-output"></div>
-            <div id="weather-output"></div>
-            <div id="time-output"></div>
-        </div>
-        <br>
-        <form id="forecast-form">
-            <div class="form-group">
-                <input type="text" id="forecast-input" class="form-control" placeholder="Check the Three Day Forecast">
+            </form>
+            <br>
+            <div class="card">
+                <div class="rounded mx-auto d-block" id="weather-icon"></div>
+                <div id="location-output"></div>
+                <div id="weather-output"></div>
+                <div id="current-forecast"></div>
+                <div id="time-output"></div>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">
+            <br>
+            <form id="forecast-form">
+                <div class="form-group">
+                    <input type="text" id="forecast-input" class="form-control" placeholder="Enter City and State...">
+                </div>
+                <button type="submit" class="btn btn-danger btn-block">
                 <i class="fa fa-calendar"></i>
-                Search
+                Search Tomorrow's Weather
             </button>
-        </form>
-        <br>
-        <div class="card">
-            <div id="forecast-output"></div>
-            <div id="three-day-forecast"></div>
+            </form>
+            <br>
+            <div class="card">
+                <div id="forecast-output"></div>
+                <div id="three-day-forecast"></div>
+            </div>
         </div>
     </div>
 
@@ -57,6 +60,8 @@
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <!--AXIOS-->
     <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <!--API CREDS-->
+    <script src="js/creds/apiCreds.js"></script>
     <!--MAIN.JS-->
     <script src="js/main.js"></script>
 </body>
