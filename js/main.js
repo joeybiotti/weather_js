@@ -1,7 +1,7 @@
 console.log("main.js loaded");
 
 //Api Key
-let apiKey = '596e50f0ee44f6b1'; //API KEY GOES HERE.
+let apiKey = ''; //API KEY GOES HERE.
 
 //Get location form
 let locationForm = document.getElementById('weather-form');
@@ -83,13 +83,13 @@ function threeDayForecast(e){
        let forecastDay = response.data.forecast.txt_forecast.forecastday[0].title;
        let forecastIcon = response.data.forecast.txt_forecast.forecastday[0].icon_url;
 
-       let threeDayForecastOutput =  `
-                <div>
-                    <h4 class="text-center text-success">${forecastDay}</h4>
-                    <img class="rounded mx-auto d-block" src="${forecastIcon}" alt="Forecast Icon"/>
-                    <h6 class="text-center">${forecastInfo}</h6>
-                </div>
-       `
+       const threeDayForecastOutput = `
+            <div>
+                <h4 class="text-center text-success"><u>${forecastDay}</u></h4>
+                <img class="rounded mx-auto d-block" src="${forecastIcon}" alt="Forecast Icon"/>
+                <h6 class="text-center">${forecastInfo}</h6>
+            </div>
+        `;
 
        document.getElementById('forecast-output').innerHTML = forecastOutput;
        document.getElementById('three-day-forecast').innerHTML = threeDayForecastOutput;
