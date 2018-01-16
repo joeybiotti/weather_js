@@ -1,7 +1,7 @@
 console.log("main.js loaded");
 
 //Api Key
-let apiKey = ''; //API KEY GOES HERE.
+const apiKey = '596e50f0ee44f6b1'; //API KEY GOES HERE.
 
 //Get location form
 let locationForm = document.getElementById('weather-form');
@@ -58,7 +58,7 @@ function forecast(e){
     })
 };
 
-//Get forecast form
+//Get Tomorrow's Weather Form
 let forecastForm = document.getElementById('forecast-form');
 
 forecastForm.addEventListener('submit', threeDayForecast);
@@ -68,7 +68,7 @@ function threeDayForecast(e){
     let forecastLocation = document.getElementById('forecast-input').value;
     console.log(forecastLocation);
 
-    axios.get('http://api.wunderground.com/api/'+ apiKey +'/forecast/q/TN/Nashville.json', {
+    axios.get('http://api.wunderground.com/api/'+ apiKey +'/forecast/q/'+ forecastLocation + '.json', {
         params: {
             location: location,
             key: apiKey
@@ -77,11 +77,11 @@ function threeDayForecast(e){
     .then(function(response){
        console.log('Forecast response: ', response);
 
-       let forecastOutput = `<h2 class="text-center text-success card-title"><strong>Three Day Forecast</strong></h2>`;
+       let forecastOutput = `<h2 class="text-center text-success card-title"><strong>Tomorrow's Weather</strong></h2>`;
 
-       let forecastInfo = response.data.forecast.txt_forecast.forecastday[0].fcttext;
-       let forecastDay = response.data.forecast.txt_forecast.forecastday[0].title;
-       let forecastIcon = response.data.forecast.txt_forecast.forecastday[0].icon_url;
+       let forecastInfo = response.data.forecast.txt_forecast.forecastday[2].fcttext;
+       let forecastDay = response.data.forecast.txt_forecast.forecastday[2].title;
+       let forecastIcon = response.data.forecast.txt_forecast.forecastday[2].icon_url;
 
        const threeDayForecastOutput = `
             <div>
