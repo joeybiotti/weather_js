@@ -76,7 +76,7 @@ function threeDayForecast(e){
     .then(function(response){
        console.log('Forecast response: ', response);
 
-       let forecastOutput = `<h2 class="text-center text-primary card-title"><strong>Tomorrow's Weather</strong></h2>`;
+       let forecastOutput = `<h2 class="text-center text-primary card-title"><strong>Tomorrow's Weather for ${forecastLocation}</strong></h2>`;
 
        let forecastInfo = response.data.forecast.txt_forecast.forecastday[2].fcttext;
        let forecastDay = response.data.forecast.txt_forecast.forecastday[2].title;
@@ -84,7 +84,7 @@ function threeDayForecast(e){
 
        const threeDayForecastOutput = `
             <div>
-                <h4 class="text-center text-primary"><u>${forecastDay}</u></h4>
+                <h4 class="text-center text-primary">${forecastDay}</h4>
                 <img class="rounded mx-auto d-block" src="${forecastIcon}" alt="Forecast Icon"/>
                 <h6 class="text-center">${forecastInfo}</h6>
             </div>
