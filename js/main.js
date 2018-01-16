@@ -1,7 +1,7 @@
 console.log("main.js loaded");
 
 //Api Key
-const apiKey = '596e50f0ee44f6b1'; //API KEY GOES HERE.
+const apiKey = wxKey; //API KEY STORED IN 'js/creds/apiCreds.js
 
 //Get location form
 let locationForm = document.getElementById('weather-form');
